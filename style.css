@@ -1,0 +1,141 @@
+:root {
+  color-scheme: light;
+  --ink: #17202a;
+  --muted: #64707d;
+  --line: #dfe5ea;
+  --surface: #ffffff;
+  --accent: #0969da;
+  --accent-soft: #ddf4ff;
+  --background: #f6f8fa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  color: var(--ink);
+  background: var(--background);
+  font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+main {
+  width: min(100% - 32px, 780px);
+  margin: 0 auto;
+  padding: 64px 0;
+}
+
+header {
+  margin-bottom: 28px;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3rem);
+  letter-spacing: -0.04em;
+}
+
+.intro {
+  max-width: 560px;
+  margin: 8px 0 0;
+  color: var(--muted);
+}
+
+#events {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.event {
+  padding: 22px 24px;
+  border-bottom: 1px solid var(--line);
+}
+
+.event:last-child {
+  border-bottom: 0;
+}
+
+.event-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.event a {
+  color: var(--accent);
+  font-size: 1.1rem;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.event a:hover {
+  text-decoration: underline;
+}
+
+.date {
+  flex: 0 0 auto;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.description {
+  margin: 8px 0 16px;
+  color: var(--muted);
+}
+
+.metadata {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.metadata span::before {
+  color: var(--accent);
+}
+
+.language::before {
+  content: "●";
+  margin-right: 6px;
+}
+
+.stars::before {
+  content: "★";
+  margin-right: 6px;
+}
+
+.status {
+  margin: 0;
+  padding: 24px;
+  color: var(--muted);
+}
+
+@media (max-width: 520px) {
+  main {
+    width: min(100% - 24px, 780px);
+    padding: 36px 0;
+  }
+
+  .event {
+    padding: 20px;
+  }
+
+  .event-heading {
+    display: block;
+  }
+
+  .date {
+    display: block;
+    margin-top: 4px;
+  }
+}
